@@ -2,6 +2,8 @@
   <dictionary name="aliab">
     <words>
       <w>docx</w>
+      <w>spacy</w>
+      <w>tfidf</w>
       <w>xlsx</w>
     </words>
   </dictionary>
