@@ -41,6 +41,7 @@
             // 
             resources.ApplyResources(this.springFieldHeader, "springFieldHeader");
             this.springFieldHeader.Name = "springFieldHeader";
+            this.springFieldHeader.Click += new System.EventHandler(this.springFieldHeader_Click);
             // 
             // upload
             // 
@@ -49,16 +50,20 @@
             // 
             // browse
             // 
+            this.browse.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.browse, "browse");
+            this.browse.ForeColor = System.Drawing.SystemColors.ControlText;
             this.browse.Name = "browse";
-            this.browse.UseVisualStyleBackColor = true;
+            this.browse.UseVisualStyleBackColor = false;
             this.browse.Click += new System.EventHandler(this.browse_Click);
             // 
             // process
             // 
+            this.process.BackColor = System.Drawing.Color.Blue;
             resources.ApplyResources(this.process, "process");
+            this.process.ForeColor = System.Drawing.Color.White;
             this.process.Name = "process";
-            this.process.UseVisualStyleBackColor = true;
+            this.process.UseVisualStyleBackColor = false;
             this.process.Click += new System.EventHandler(this.process_Click);
             // 
             // processLabel
@@ -68,9 +73,10 @@
             // 
             // show
             // 
+            this.show.BackColor = System.Drawing.Color.Lime;
             resources.ApplyResources(this.show, "show");
             this.show.Name = "show";
-            this.show.UseVisualStyleBackColor = true;
+            this.show.UseVisualStyleBackColor = false;
             this.show.Click += new System.EventHandler(this.show_Click);
             // 
             // SpringfieldApp
