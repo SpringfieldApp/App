@@ -1,0 +1,1 @@
+ISO 8879:1986 SGML GML XML  A meta-markup language, used to create markup languages such as DocBook.  markup Standard Generalized Markup Language SGML SGML   S  example glossary
