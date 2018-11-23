@@ -41,7 +41,6 @@
             // 
             resources.ApplyResources(this.springFieldHeader, "springFieldHeader");
             this.springFieldHeader.Name = "springFieldHeader";
-            this.springFieldHeader.Click += new System.EventHandler(this.springFieldHeader_Click);
             // 
             // upload
             // 
@@ -59,9 +58,7 @@
             // 
             // process
             // 
-            this.process.BackColor = System.Drawing.Color.Blue;
             resources.ApplyResources(this.process, "process");
-            this.process.ForeColor = System.Drawing.Color.White;
             this.process.Name = "process";
             this.process.UseVisualStyleBackColor = false;
             this.process.Click += new System.EventHandler(this.process_Click);
@@ -73,7 +70,6 @@
             // 
             // show
             // 
-            this.show.BackColor = System.Drawing.Color.Lime;
             resources.ApplyResources(this.show, "show");
             this.show.Name = "show";
             this.show.UseVisualStyleBackColor = false;

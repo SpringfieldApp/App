@@ -19,3 +19,13 @@ D:\Harsh's Programs\App-master\SpringfieldApp\bin\Debug\SpringfieldApp.exe.confi
 D:\Harsh's Programs\App-master\SpringfieldApp\bin\Debug\SpringfieldApp.exe
 D:\Harsh's Programs\App-master\SpringfieldApp\bin\Debug\SpringfieldApp.pdb
 D:\Harsh's Programs\App-master\SpringfieldApp\obj\Debug\SpringfieldApp.exe.config
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.csprojAssemblyReference.cache
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.Properties.Resources.resources
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.SpringfieldApp.resources
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.csproj.GenerateResource.cache
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.csproj.CoreCompileInputs.cache
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.exe
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\obj\Debug\SpringfieldApp.pdb
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\bin\Debug\SpringfieldApp.exe.config
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\bin\Debug\SpringfieldApp.exe
+D:\Yash\Springfield App\App\C#Frontend\SpringfieldApp\bin\Debug\SpringfieldApp.pdb

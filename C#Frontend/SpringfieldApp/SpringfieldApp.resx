@@ -123,23 +123,23 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="springFieldHeader.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20.25pt</value>
+    <value>Microsoft Sans Serif, 17pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="springFieldHeader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="springFieldHeader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 29</value>
+    <value>136, 29</value>
   </data>
   <data name="springFieldHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 31</value>
+    <value>320, 29</value>
   </data>
   <data name="springFieldHeader.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="springFieldHeader.Text" xml:space="preserve">
-    <value>Springfield Challenge</value>
+    <value>SPRINGFIELD CHALLENGE</value>
   </data>
   <data name="&gt;&gt;springFieldHeader.Name" xml:space="preserve">
     <value>springFieldHeader</value>
@@ -157,22 +157,22 @@
     <value>True</value>
   </data>
   <data name="upload.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="upload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="upload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 105</value>
+    <value>103, 130</value>
   </data>
   <data name="upload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 20</value>
+    <value>161, 18</value>
   </data>
   <data name="upload.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="upload.Text" xml:space="preserve">
-    <value>Upload Document</value>
+    <value>UPLOAD DOCUMENT</value>
   </data>
   <data name="&gt;&gt;upload.Name" xml:space="preserve">
     <value>upload</value>
@@ -187,19 +187,19 @@
     <value>4</value>
   </data>
   <data name="browse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="browse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 103</value>
+    <value>332, 98</value>
   </data>
   <data name="browse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 26</value>
+    <value>148, 35</value>
   </data>
   <data name="browse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="browse.Text" xml:space="preserve">
-    <value>Browse</value>
+    <value>BROWSE</value>
   </data>
   <data name="&gt;&gt;browse.Name" xml:space="preserve">
     <value>browse</value>
@@ -213,20 +213,23 @@
   <data name="&gt;&gt;browse.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="process.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="process.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="process.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 145</value>
+    <value>332, 148</value>
   </data>
   <data name="process.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 26</value>
+    <value>148, 35</value>
   </data>
   <data name="process.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="process.Text" xml:space="preserve">
-    <value>Process</value>
+    <value>PROCESS</value>
   </data>
   <data name="&gt;&gt;process.Name" xml:space="preserve">
     <value>process</value>
@@ -244,22 +247,22 @@
     <value>True</value>
   </data>
   <data name="processLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="processLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="processLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 244</value>
+    <value>103, 244</value>
   </data>
   <data name="processLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
+    <value>195, 18</value>
   </data>
   <data name="processLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="processLabel.Text" xml:space="preserve">
-    <value>Processed Document</value>
+    <value>PROCESSED DOCUMENT</value>
   </data>
   <data name="&gt;&gt;processLabel.Name" xml:space="preserve">
     <value>processLabel</value>
@@ -274,19 +277,19 @@
     <value>1</value>
   </data>
   <data name="show.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="show.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 241</value>
+    <value>332, 237</value>
   </data>
   <data name="show.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 26</value>
+    <value>148, 35</value>
   </data>
   <data name="show.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="show.Text" xml:space="preserve">
-    <value>Show</value>
+    <value>SHOW</value>
   </data>
   <data name="&gt;&gt;show.Name" xml:space="preserve">
     <value>show</value>
