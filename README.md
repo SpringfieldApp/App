@@ -4,4 +4,4 @@
 ### Before you run the App on your system
 Go to   App/C#Frontend/SpringfieldApp/SpringfieldApp.cs
 
-Change this variables: pythonPath, scriptPath, tempProcessedPath
+Change these variables: pythonPath, scriptPath, tempProcessedPath
