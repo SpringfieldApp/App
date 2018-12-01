@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RulePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RulePage.Designer.cs">
+      <DependentUpon>RulePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpringfieldApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RulePage.resx">
+      <DependentUpon>RulePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpringfieldApp.resx">
       <DependentUpon>SpringfieldApp.cs</DependentUpon>
     </EmbeddedResource>

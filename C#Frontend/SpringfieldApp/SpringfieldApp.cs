@@ -16,13 +16,13 @@ namespace SpringfieldApp
         string fileNameDOC;
 
         // Location of python.exe                               --EDIT-THIS
-        string pythonPath = "C:\\Users\\Yash\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe";
+        string pythonPath = "C:\\Users\\Wel11\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe";
 
         // Location of pythonScript                             --EDIT-THIS
-        string scriptPath = "D:\\Yash\\Springfield App\\App\\C#Frontend\\testScript.py";
+        string scriptPath = "D:\\Harsh's Programs\\App\\C#Frontend\\testScript.py";
 
         // Location for temp Processed file to store            --EDIT-THIS
-        string tempProcessedPath = "D:\\Yash\\Springfield App\\App\\C#Frontend\\tempProcessed.csv";
+        string tempProcessedPath = "D:\\Harsh's Programs\\App\\C#Frontend\\tempProcessed.csv";
 
         // initalzing the App
         public SpringfieldApp()
@@ -30,6 +30,7 @@ namespace SpringfieldApp
             InitializeComponent();
             show.Enabled = false;
             process.Enabled = false;
+            create.Enabled = false;
         }
 
         // clickListener for BROWSE Button
@@ -68,6 +69,7 @@ namespace SpringfieldApp
          
             // once the processing is done
             show.Enabled = true;
+            create.Enabled = true;
 
             // and save the processed file as document someWhere
             File.WriteAllText(tempProcessedPath, output);
@@ -99,6 +101,16 @@ namespace SpringfieldApp
 
                 // Here is the result of StdOut(for example: print("test"))
                 return process.StandardOutput.ReadToEnd();
+            }
+        }
+
+        private void create_Click(object sender, EventArgs e)
+        {
+            if(create.Enabled == true)
+            {
+                this.Hide();
+                RulePage rulePage = new RulePage();
+                rulePage.ShowDialog();
             }
         }
     }
