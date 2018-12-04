@@ -9,7 +9,7 @@ format_to_text = {
     'json': json_parser,
     'txt': txt_parser,
     '': txt_parser,
-    '.log': txt_parser,
+    'log': txt_parser,
     'xls': xlsx_parser,
     'xlsx': xlsx_parser,
     'pdf': pdf_parser
@@ -34,7 +34,7 @@ def no_of_faces(img_path):
     img = cv2.imread(img_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray)  # (gray, 1.3, 5)
-    return len(faces)
+    return len(faces)   
 
 
 def main():
