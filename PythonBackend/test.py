@@ -34,10 +34,10 @@ def no_of_faces(img_path):
     img = cv2.imread(img_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray)  # (gray, 1.3, 5)
-    return len(faces)   
+    return len(faces)
 
 
-def main():
+if __name__ == '__main__':
     pic = 'samples/pic.jpg'
     print("The file", pic, "has ", no_of_faces(pic), "faces")
     files = ['samples/samplePDF.pdf', 'samples/SampleDocx.docx', 'samples/SampleJSON.json', 'samples/CSVSample.csv',
@@ -45,8 +45,3 @@ def main():
     for file in files:
         with open('SampleOutputs/'+file[file.index('/')+1:file.rindex('.')]+'.txt', 'w+') as f:
             f.write(get_text(file).strip())
-
-
-if __name__ == '__main__':
-    main()
-
