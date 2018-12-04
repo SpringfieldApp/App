@@ -14,6 +14,27 @@ def clean(text: str, keep_sections=True):
     return text
 
 
+def _clean(text: str, keep_sections=True):
+    text = text.strip().split("\n")
+    if keep_sections:
+        text = [x.strip() for x in text]
+        cleaned = []
+        ok = True
+        for x in text:
+            if x != "":
+                ok = True
+                cleaned.append(x)
+            else:
+                if ok:
+                    cleaned.append("\n")
+                    ok = False
+        text = " ".join(cleaned)
+    else:
+        text = [x.strip() for x in text if x.strip() != ""]
+        text = "\n".join(text)
+    return text
+
+
 def simple_extractor(text: str, search: str):
     search = search.lower()
     text2 = text.lower()
@@ -104,6 +125,6 @@ i WOH
 
 oO"""
 
-    a = clean(txt)
+    a = _clean(txt)
     print(a)
     # print(simple_extractor(a, "Auth"))
