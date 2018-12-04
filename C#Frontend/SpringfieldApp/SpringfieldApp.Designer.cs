@@ -35,13 +35,15 @@
             this.process = new System.Windows.Forms.Button();
             this.processLabel = new System.Windows.Forms.Label();
             this.show = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.create = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // springFieldHeader
             // 
             resources.ApplyResources(this.springFieldHeader, "springFieldHeader");
             this.springFieldHeader.Name = "springFieldHeader";
-            this.springFieldHeader.Click += new System.EventHandler(this.springFieldHeader_Click);
             // 
             // upload
             // 
@@ -79,9 +81,29 @@
             this.show.UseVisualStyleBackColor = false;
             this.show.Click += new System.EventHandler(this.show_Click);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // create
+            // 
+            resources.ApplyResources(this.create, "create");
+            this.create.Name = "create";
+            this.create.UseVisualStyleBackColor = true;
+            this.create.Click += new System.EventHandler(this.create_Click);
+            // 
             // SpringfieldApp
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.create);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.show);
             this.Controls.Add(this.processLabel);
             this.Controls.Add(this.process);
@@ -108,6 +130,9 @@
         private System.Windows.Forms.Button process;
         private System.Windows.Forms.Label processLabel;
         private System.Windows.Forms.Button show;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button create;
     }
 }
 
