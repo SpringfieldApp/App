@@ -1,0 +1,20 @@
+file to be called: App/PythonBackend/springfield.py
+system arguments: File1 TypeFile1 File2 TypeFile2 File3 TypeFile3 ....
+
+File# -> Full location of file
+TypeFile# -> Type, one of those in rules
+
+Python code returns newline-separated output locations, 1 for each file
+If there was an error, we create a text file, which has content "ERROR"
+Otherwise, it is a csv file, with extracted contents
+
+RULES folder:
+App/PythonBackend/Rules
+
+Each file in rules is a rule title
+The contents of each file are the (newline-separated) fields to be found for each file
+Sample as shown: Sample.txt
+Name of rule(file type): Sample
+Fields to be extracted:
+1. Amount
+2. Name

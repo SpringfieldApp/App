@@ -1,4 +1,10 @@
 PythonBackend/.idea
 PythonBackend/output
+PythonBackend/docs
+PythonBackend/cal
+PythonBackend/Outputs/*
+Outputs/*
+PythonBackend/Rules/*
+!PythonBackend/Rules/Sample.txt
 PythonBackend/Sample.pdf
 PythonBackend/__pycache__
