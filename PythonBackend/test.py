@@ -9,7 +9,7 @@ format_to_text = {
     'json': json_parser,
     'txt': txt_parser,
     '': txt_parser,
-    '.log': txt_parser,
+    'log': txt_parser,
     'xls': xlsx_parser,
     'xlsx': xlsx_parser,
     'pdf': pdf_parser
@@ -37,7 +37,7 @@ def no_of_faces(img_path):
     return len(faces)
 
 
-def main():
+if __name__ == '__main__':
     pic = 'samples/pic.jpg'
     print("The file", pic, "has ", no_of_faces(pic), "faces")
     files = ['samples/samplePDF.pdf', 'samples/SampleDocx.docx', 'samples/SampleJSON.json', 'samples/CSVSample.csv',
@@ -45,8 +45,3 @@ def main():
     for file in files:
         with open('SampleOutputs/'+file[file.index('/')+1:file.rindex('.')]+'.txt', 'w+') as f:
             f.write(get_text(file).strip())
-
-
-if __name__ == '__main__':
-    main()
-
