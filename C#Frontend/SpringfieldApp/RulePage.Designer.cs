@@ -46,7 +46,7 @@
             // 
             // keyfields
             // 
-            this.keyfields.Location = new System.Drawing.Point(184, 52);
+            this.keyfields.Location = new System.Drawing.Point(184, 53);
             this.keyfields.Multiline = true;
             this.keyfields.Name = "keyfields";
             this.keyfields.Size = new System.Drawing.Size(381, 20);
@@ -66,6 +66,7 @@
             // textarea
             // 
             this.textarea.Location = new System.Drawing.Point(77, 174);
+            this.textarea.Multiline = true;
             this.textarea.Name = "textarea";
             this.textarea.Size = new System.Drawing.Size(488, 20);
             this.textarea.TabIndex = 3;
