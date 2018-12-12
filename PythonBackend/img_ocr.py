@@ -1,10 +1,10 @@
-def get_text(pdf_location, res=300, page=None):
+def get_text(pdf_location, res=120, page=None):
     # import os
     import io
     from PIL import Image
     import pytesseract
     from wand.image import Image as wi
-    # from clean import _clean
+    from clean import _clean
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
     # DIR = pdf_location[0:pdf_location.rindex("\\")]
@@ -25,8 +25,8 @@ def get_text(pdf_location, res=300, page=None):
         imgBlob = page.make_blob('jpeg')
         im = Image.open(io.BytesIO(imgBlob))
         text = pytesseract.image_to_string(im, lang='eng')
-        # extracted_text.append(_clean(text))
-        extracted_text.append(text)
+        extracted_text.append(_clean(text))
+        # extracted_text.append(text)
     return extracted_text
 
 
@@ -87,6 +87,6 @@ if __name__ == '__main__':
     #     print(i, time.time() - a)
     #     print("\n\n\n\n")
     #     a = time.time()
-    page = get_text(r"Sample.pdf", res=110, page=1)
+    page = get_text(r"Sample.pdf", res=120, page=1)
     print(page[0])
     # print(extract_from_img("C:\\Users\\aliab\\Pictures\\Capture.png"))

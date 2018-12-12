@@ -1,8 +1,4 @@
-import csv
 with open('a.csv', 'w+') as f:
     fieldnames = ['Field Names', 'Source(s)']
-    writer = csv.writer(f)
-    writer.writerow(fieldnames)
-    content = {'a':'aa', 'b':'bb'}
-    writer.writerow(['a', 2])
-    writer.writerow(['b', 3])
+    f.write('a' + ',' + 'b' + '\n')
+    f.write('sdfsfa' + ',' + 'ba' + '\n')

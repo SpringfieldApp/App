@@ -34,19 +34,14 @@ def process(f_location, f_type):
 
 def write_to_csv(csv_file, content):
     test_print(csv_file, content)
-    import csv
     with open(csv_file, 'w+') as f:
         if isinstance(content, str):
-            test_print("str")
             f.write(content)
         elif isinstance(content, dict):
-            test_print("dict")
-            fieldnames = ['Field Names', 'Source(s)']
-            writer = csv.writer(f)
-            writer.writerow(fieldnames)
+            f.write('Field Names,Source(s)\n')
             for x in content:
                 test_print(x, content[x])
-                writer.writerow([x, content[x]])
+                f.write(str(x) + ',' + str(content[x]) + '\n')
 
 
 def save_to_file(file: str, content, error: bool = False):
