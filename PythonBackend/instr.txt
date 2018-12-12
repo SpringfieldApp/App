@@ -18,3 +18,13 @@ Name of rule(file type): Sample
 Fields to be extracted:
 1. Amount
 2. Name
+
+
+
+
+Create new Rule
+
+Document Type: _<Name>_
+Fields:
+_<F1>_
+_<F2>_

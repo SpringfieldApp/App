@@ -1,3 +1,46 @@
+def pdf_parser(pdf_location, res=120, page=None):
+    # import os
+    import io
+    from PIL import Image
+    import pytesseract
+    from wand.image import Image as wi
+    from clean import _clean
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
+
+    # DIR = pdf_location[0:pdf_location.rindex("\\")]
+    FILE = pdf_location[pdf_location.rindex("\\") + 1:]
+    # os.chdir(DIR)
+
+    if page is None:
+        pdf = wi(filename=FILE, resolution=res)
+    else:
+        pdf = wi(filename=FILE + "[" + str(page) + "]", resolution=res)
+    pdfImg = pdf.convert('jpeg')
+    extracted_text = []
+    for img in pdfImg.sequence:
+        page = wi(image=img)
+        imgBlob = page.make_blob('jpeg')
+        im = Image.open(io.BytesIO(imgBlob))
+        text = pytesseract.image_to_string(im, lang='eng')
+        extracted_text.append(_clean(text))
+    return extracted_text
+
+
+def extract_from_img(img_location):
+    # import os
+    from PIL import Image
+    import pytesseract
+    from clean import _clean
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
+
+    DIR = img_location[0:img_location.rindex("\\")]
+    FILE = img_location[img_location.rindex("\\") + 1:]
+    # os.chdir(DIR)
+    im = Image.open(FILE)
+    text = pytesseract.image_to_string(im, lang='eng')
+    return _clean(text)
+
+
 # support
 def get_text_from_json(deserialized_json):
     if isinstance(deserialized_json, dict):
@@ -14,37 +57,6 @@ def get_text_from_json(deserialized_json):
         return deserialized_json
     else:
         return ''
-
-
-def run(args):
-    import subprocess
-    import errno
-    """Run ``command`` and return the subsequent ``stdout`` and ``stderr``
-    as a tuple. If the command is not successful, this raises a
-    :exc:`textract.exceptions.ShellError`.
-    """
-    # run a subprocess and put the stdout and stderr on the pipe object
-    try:
-        pipe = subprocess.Popen(
-            args,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-        )
-    except OSError as e:
-        if e.errno == errno.ENOENT:
-            # File not found.
-            # This is equivalent to getting exitcode 127 from sh
-            raise Exception(
-                ' '.join(args), 127, '', '',
-            )
-    # pipe.wait() ends up hanging on large files. using
-    # pipe.communicate appears to avoid this issue
-    stdout, stderr = pipe.communicate()
-    # if pipe is busted, raise an error (unlike Fabric)
-    if pipe.returncode != 0:
-        raise Exception(
-            ' '.join(args), pipe.returncode, stdout, stderr,
-        )
-    return stdout, stderr
 
 
 # csv, psv, tsv
@@ -111,41 +123,3 @@ def xlsx_parser(filename):
             if new_output:
                 output += u' '.join(new_output) + u'\n'
     return output
-
-
-# pdf
-def pdf_parser(filename, method='pypdf2'):
-    if method == 'pypdf2':
-        import PyPDF2
-        pdfFileObj = open(filename, 'rb')
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-        # print("The PDF file has", pdfReader.numPages, "pages")
-        text = ''
-        for i in range(pdfReader.numPages):
-            pageObj = pdfReader.getPage(i)
-            text += '\n' + pageObj.extractText()
-        pdfFileObj.close()
-        return text
-    elif method == 'tesseract':
-        import os
-        from tempfile import mkdtemp
-        import shutil
-        temp_dir = mkdtemp()
-        base = os.path.join(temp_dir, 'conv')
-        contents = []
-        try:
-            stdout, _ = run(['pdftoppm', filename, base])
-            for page in sorted(os.listdir(temp_dir)):
-                page_path = os.path.join(temp_dir, page)
-                stdout, _ = run(['tesseract', page_path, 'stdout'])
-                page_content = stdout
-                contents.append(page_content)
-            return b''.join(contents)
-        finally:
-            shutil.rmtree(temp_dir)
-
-
-# doc
-def doc_parser(filename):
-    stdout, stderr = run(['antiword', filename])
-    return stdout

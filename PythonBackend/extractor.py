@@ -5,25 +5,27 @@ format_to_text = {
     'tsv': tsv_parser,
     'psv': psv_parser,
     'docx': docx_parser,
-    'doc': doc_parser,  # warning
     'json': json_parser,
     'txt': txt_parser,
     '': txt_parser,
     'log': txt_parser,
     'xls': xlsx_parser,
     'xlsx': xlsx_parser,
-    'pdf': pdf_parser
+    'pdf': pdf_parser,
+    'jpg': extract_from_img,
+    'png': extract_from_img,
+    'jpeg': extract_from_img
 }
 
 
-def get_text(filename: str, extension=None):
+def extract_text(filename: str, *args, extension=None, **kwargs):
     if extension is None:
         extension = filename[filename.rindex('.') + 1:]
     if extension in format_to_text:
         parser = format_to_text[extension]
-        return parser(filename)
+        return parser(filename, *args, **kwargs)
     else:
-        return "ERROR"
+        raise AttributeError("Cannot extract text from this particular extension: " + extension)
 
 
 def no_of_faces(img_path):
@@ -44,4 +46,4 @@ if __name__ == '__main__':
              'samples/sampleText.txt', 'samples/XLSXSample.xlsx']
     for file in files:
         with open('SampleOutputs/'+file[file.index('/')+1:file.rindex('.')]+'.txt', 'w+') as f:
-            f.write(get_text(file).strip())
+            f.write(extract_text(file).strip())
