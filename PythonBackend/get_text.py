@@ -4,11 +4,14 @@ def pdf_parser(pdf_location, res=120, page=None):
     from PIL import Image
     import pytesseract
     from wand.image import Image as wi
-    from clean import _clean
+    # from clean import _clean
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
     # DIR = pdf_location[0:pdf_location.rindex("\\")]
-    FILE = pdf_location[pdf_location.rindex("\\") + 1:]
+    try:
+        FILE = pdf_location[pdf_location.rindex("\\") + 1:]
+    except ValueError:
+        FILE = pdf_location
     # os.chdir(DIR)
 
     if page is None:
@@ -22,7 +25,8 @@ def pdf_parser(pdf_location, res=120, page=None):
         imgBlob = page.make_blob('jpeg')
         im = Image.open(io.BytesIO(imgBlob))
         text = pytesseract.image_to_string(im, lang='eng')
-        extracted_text.append(_clean(text))
+        # extracted_text.append(_clean(text))
+        extracted_text.append(text)
     return extracted_text
 
 
@@ -30,15 +34,18 @@ def extract_from_img(img_location):
     # import os
     from PIL import Image
     import pytesseract
-    from clean import _clean
+    # from clean import _clean
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
-    DIR = img_location[0:img_location.rindex("\\")]
-    FILE = img_location[img_location.rindex("\\") + 1:]
+    # DIR = img_location[0:img_location.rindex("\\")]
+    try:
+        FILE = img_location[img_location.rindex("\\") + 1:]
+    except ValueError:
+        FILE = img_location
     # os.chdir(DIR)
     im = Image.open(FILE)
     text = pytesseract.image_to_string(im, lang='eng')
-    return _clean(text)
+    return text
 
 
 # support

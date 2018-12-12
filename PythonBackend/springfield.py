@@ -27,8 +27,6 @@ def process(f_location, f_type):
         # test_print(fields)
 
         content = get_content(text, fields)
-        test_print(content)
-        # TODO convert to csv, if needed
         return content
     else:
         raise AttributeError("No rule defined for the particular document type: " + f_type)
@@ -44,10 +42,11 @@ def write_to_csv(csv_file, content):
         elif isinstance(content, dict):
             test_print("dict")
             fieldnames = ['Field Names', 'Source(s)']
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
+            writer = csv.writer(f)
+            writer.writerow(fieldnames)
             for x in content:
-                writer.writerow({fieldnames[0]: x, fieldnames[1]: content[x]})
+                test_print(x, content[x])
+                writer.writerow([x, content[x]])
 
 
 def save_to_file(file: str, content, error: bool = False):
