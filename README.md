@@ -6,8 +6,9 @@ Go to App/C#Frontend/SpringfieldApp/SpringfieldApp.cs
 
 Change these variables: pythonPath, scriptPath, tempProcessedPath
 
-## Installation instructions:
-* Install python3.6+ on your system(Windows only)  (Also, add it to your PATH environment variable)
+## Installation instructions (Windows only):
+* Install python3.6+ (Also, add it to your PATH environment variable)
+* Install pip
 * Download and install:
 1. https://ftp.icm.edu.pl/packages/ImageMagick/binaries/ImageMagick-6.9.8-10-Q8-x86-dll.exe (Also install development headers and libraries for C and C++)
 2. https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v4.0.0.20181030.exe
@@ -18,3 +19,4 @@ Change these variables: pythonPath, scriptPath, tempProcessedPath
 2. C:\Program Files (x86)\ImageMagick-6.9.8-Q8
 3. 
 C:\Program Files (x86)\Tesseract-OCR
+* Run the following command: `pip install -r requirements.txt`
