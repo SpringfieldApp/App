@@ -1,16 +1,4 @@
-# Test script
-# Outputs the multiplication tables of all the elements
-
 import sys
-
-file = open(sys.argv[1], 'r')
-s = file.read()
-file.close()
-
-numbers = s.split(',')
-tables = ''
-for i in range(1, 11):
-	for number in numbers:
-		tables = tables + (str(int(number) * i) + ',')
-	tables += '\n'
-print(tables)
+with (open(r'D:\Yash\SpringfieldApp\RefactoredApp\SpringField\output\op.txt', 'w+')) as f:
+    for i in range(len(sys.argv)):
+        f.write(sys.argv[i] + '\n')
