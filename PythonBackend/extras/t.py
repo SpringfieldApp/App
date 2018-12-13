@@ -33,5 +33,5 @@ def get_string(img_path):
     cv2.imwrite(save_path, img)
 
     # Recognize text with tesseract for python
-    result = pytesseract.image_to_string(img, lang="eng")
+    result = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
     return result

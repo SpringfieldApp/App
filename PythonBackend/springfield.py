@@ -3,12 +3,9 @@ import sys
 
 cwd = os.getcwd()
 RULES_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Rules"
-# OUTPUT_LOCATION = os.getcwd() + os.sep + ".." + os.sep + "Outputs"
 OUTPUT_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Outputs"
 TEMP_OUTPUT_LOCATION = cwd + os.sep + "temp_outputs"
-print(RULES_LOCATION)
-print(OUTPUT_LOCATION)
-print(TEMP_OUTPUT_LOCATION)
+
 
 def test_print(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
@@ -63,7 +60,7 @@ def save_to_file(file: str, content, error: bool = False):
         with(open(temp_output_loc, 'w+')) as f:
             f.write(str(content) + "\n")
     else:
-        output_loc = OUTPUT_LOCATION + os.sep + f_name + ".csv"
+        output_loc = OUTPUT_LOCATION + os.sep + f_name + str() + ".csv"
         write_to_csv(output_loc, content)
         temp_output_loc = TEMP_OUTPUT_LOCATION + os.sep + f_name + ".csv"
         write_to_csv(temp_output_loc, content)

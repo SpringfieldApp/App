@@ -45,7 +45,7 @@ def extract_from_img(img_location):
         FILE = img_location
     # os.chdir(DIR)
     im = Image.open(FILE)
-    text = pytesseract.image_to_string(im, lang='eng')
+    text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
     return text
 
 

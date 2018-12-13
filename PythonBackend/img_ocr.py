@@ -24,7 +24,7 @@ def get_text(pdf_location, res=120, page=None):
         page = wi(image=img)
         imgBlob = page.make_blob('jpeg')
         im = Image.open(io.BytesIO(imgBlob))
-        text = pytesseract.image_to_string(im, lang='eng')
+        text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
         extracted_text.append(_clean(text))
         # extracted_text.append(text)
     return extracted_text
@@ -52,7 +52,7 @@ def generate_text(pdf_location, res=300):
         page = wi(image=img)
         imgBlob = page.make_blob('jpeg')
         im = Image.open(io.BytesIO(imgBlob))
-        text = pytesseract.image_to_string(im, lang='eng')
+        text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
         # yield _clean(text)
         yield text
 
@@ -71,7 +71,7 @@ def extract_from_img(img_location):
         FILE = img_location
     # os.chdir(DIR)
     im = Image.open(FILE)
-    text = pytesseract.image_to_string(im, lang='eng')
+    text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
     return text
 
 
