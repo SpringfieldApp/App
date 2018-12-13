@@ -2,6 +2,8 @@
 PythonBackend/.idea
 PythonBackend/output
 PythonBackend/docs
+PythonBackend/cv
+PythonBackend/temp_outputs/*
 PythonBackend/cal
 PythonBackend/Outputs/*
 Outputs/*

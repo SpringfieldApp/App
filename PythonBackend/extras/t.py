@@ -1,4 +1,7 @@
 import os, pytesseract, cv2
+import numpy as np
+
+
 def get_string(img_path):
     # Read image using opencv
     img = cv2.imread(img_path)

@@ -1,31 +1,32 @@
+import sys
+
+
+def test_print(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
+
 def pdf_parser(pdf_location, res=120, page=None):
-    # import os
     import io
     from PIL import Image
     import pytesseract
     from wand.image import Image as wi
-    # from clean import _clean
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
-
-    # DIR = pdf_location[0:pdf_location.rindex("\\")]
     try:
         FILE = pdf_location[pdf_location.rindex("\\") + 1:]
     except ValueError:
         FILE = pdf_location
-    # os.chdir(DIR)
-
     if page is None:
         pdf = wi(filename=FILE, resolution=res)
     else:
         pdf = wi(filename=FILE + "[" + str(page) + "]", resolution=res)
     pdfImg = pdf.convert('jpeg')
     extracted_text = []
-    for img in pdfImg.sequence:
-        page = wi(image=img)
+    for i in range(len(pdfImg.sequence)):
+        test_print("Currently Processing Page " + str(i))
+        page = wi(image=pdfImg.sequence[i])
         imgBlob = page.make_blob('jpeg')
         im = Image.open(io.BytesIO(imgBlob))
-        text = pytesseract.image_to_string(im, lang='eng')
-        # extracted_text.append(_clean(text))
+        text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
         extracted_text.append(text)
     return extracted_text
 
