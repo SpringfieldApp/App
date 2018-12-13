@@ -2,7 +2,8 @@ import sys
 
 
 def test_print(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+    pass
+    # print(*args, file=sys.stderr, **kwargs)
 
 
 def pdf_parser(pdf_location, res=120, page=None):

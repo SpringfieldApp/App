@@ -8,7 +8,8 @@ TEMP_OUTPUT_LOCATION = cwd + os.sep + "temp_outputs"
 
 
 def test_print(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+    pass
+    # print(*args, file=sys.stderr, **kwargs)
 
 
 def get_fields(fields_file):
@@ -67,29 +68,28 @@ def save_to_file(file: str, content, error: bool = False):
     return temp_output_loc
 
 
-if __name__ == '__main__':
-    l = sys.argv[1:]  # f1 t1 f2 t2 f3 t3
-    # test_print(l)
-    files = {}
-    for i in range(len(l) // 2):
-        files[l[2 * i]] = l[2 * i + 1]
-    # test_print(files)
-    for x in os.listdir(TEMP_OUTPUT_LOCATION):
-        try:
-            os.remove(TEMP_OUTPUT_LOCATION + os.sep + x)
-        except Exception:
-            pass
-    for x in files:
-        file_location = x
-        file_type = files[x]
-        try:
-            result = process(file_location, file_type)
-            # test_print(result)
-            output_loc = save_to_file(file_location, result)
-        except Exception as e:
-            # test_print("Exception")
-            if len(e.args) > 0:
-                output_loc = save_to_file(file_location, e.args[0], error=True)
-            else:
-                output_loc = save_to_file(file_location, "ERROR", error=True)
-    print("200")
+l = sys.argv[1:]  # f1 t1 f2 t2 f3 t3
+# test_print(l)
+files = {}
+for i in range(len(l) // 2):
+    files[l[2 * i]] = l[2 * i + 1]
+# test_print(files)
+for x in os.listdir(TEMP_OUTPUT_LOCATION):
+    try:
+        os.remove(TEMP_OUTPUT_LOCATION + os.sep + x)
+    except Exception:
+        pass
+for x in files:
+    file_location = x
+    file_type = files[x]
+    try:
+        result = process(file_location, file_type)
+        # test_print(result)
+        output_loc = save_to_file(file_location, result)
+    except Exception as e:
+        # test_print("Exception")
+        if len(e.args) > 0:
+            output_loc = save_to_file(file_location, e.args[0], error=True)
+        else:
+            output_loc = save_to_file(file_location, "ERROR", error=True)
+print("200")

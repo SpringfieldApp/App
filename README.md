@@ -17,6 +17,5 @@ Change these variables: pythonPath, scriptPath, tempProcessedPath
 1. C:\Program Files (x86)\gs\gs9.26
 
 2. C:\Program Files (x86)\ImageMagick-6.9.8-Q8
-3. 
-C:\Program Files (x86)\Tesseract-OCR
+3. C:\Program Files (x86)\Tesseract-OCR
 * Run the following command: `pip install -r requirements.txt`

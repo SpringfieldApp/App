@@ -2,7 +2,8 @@ import sys
 
 
 def test_print(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+    pass
+    # print(*args, file=sys.stderr, **kwargs)
 
 
 def get(txt: list, field: str) -> str:
