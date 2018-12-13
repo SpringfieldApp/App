@@ -19,7 +19,7 @@ namespace SpringField
 
         private void UserGuide_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start(@"D:\Yash\Codes\SpringField\App\User_Guide.pdf");
         }
     }
 }

@@ -1,7 +1,7 @@
 import os
 import sys
 
-cwd = os.getcwd()
+cwd = r"D:\Yash\Codes\SpringField\App\PythonBackend"
 RULES_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Rules"
 OUTPUT_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Outputs"
 TEMP_OUTPUT_LOCATION = cwd + os.sep + "temp_outputs"

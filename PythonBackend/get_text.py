@@ -12,14 +12,10 @@ def pdf_parser(pdf_location, res=120, page=None):
     import pytesseract
     from wand.image import Image as wi
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
-    try:
-        FILE = pdf_location[pdf_location.rindex("\\") + 1:]
-    except ValueError:
-        FILE = pdf_location
     if page is None:
-        pdf = wi(filename=FILE, resolution=res)
+        pdf = wi(filename=pdf_location, resolution=res)
     else:
-        pdf = wi(filename=FILE + "[" + str(page) + "]", resolution=res)
+        pdf = wi(filename=pdf_location + "[" + str(page) + "]", resolution=res)
     pdfImg = pdf.convert('jpeg')
     extracted_text = []
     for i in range(len(pdfImg.sequence)):
@@ -39,13 +35,8 @@ def extract_from_img(img_location):
     # from clean import _clean
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
-    # DIR = img_location[0:img_location.rindex("\\")]
-    try:
-        FILE = img_location[img_location.rindex("\\") + 1:]
-    except ValueError:
-        FILE = img_location
     # os.chdir(DIR)
-    im = Image.open(FILE)
+    im = Image.open(img_location)
     text = pytesseract.image_to_string(im, lang='eng', config='--psm 6')
     return text
 
