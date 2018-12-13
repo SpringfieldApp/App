@@ -52,7 +52,7 @@ def get(txt: list, field: str) -> str:
                                     maybe = ans[ans.index(":") + 1:].strip()
                             except ValueError:
                                 pass
-        return maybe
+    return maybe
 
 
 def get_content(txt, fields):

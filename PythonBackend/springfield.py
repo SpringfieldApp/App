@@ -1,11 +1,14 @@
 import os
 import sys
 
-RULES_LOCATION = os.getcwd() + os.sep + "Rules"
+cwd = os.getcwd()
+RULES_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Rules"
 # OUTPUT_LOCATION = os.getcwd() + os.sep + ".." + os.sep + "Outputs"
-OUTPUT_LOCATION = os.getcwd() + os.sep + "Outputs"
-TEMP_OUTPUT_LOCATION = os.getcwd() + os.sep + "temp_outputs"
-
+OUTPUT_LOCATION = cwd[:cwd.rindex(os.sep)] + os.sep + "Outputs"
+TEMP_OUTPUT_LOCATION = cwd + os.sep + "temp_outputs"
+print(RULES_LOCATION)
+print(OUTPUT_LOCATION)
+print(TEMP_OUTPUT_LOCATION)
 
 def test_print(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)

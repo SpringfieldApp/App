@@ -7,7 +7,9 @@ PythonBackend/temp_outputs/*
 PythonBackend/cal
 PythonBackend/Outputs/*
 Outputs/*
+Rules/*
 PythonBackend/Rules/*
 !PythonBackend/Rules/Sample.txt
+!Rules/Sample.txt
 PythonBackend/Sample.pdf
 PythonBackend/__pycache__
